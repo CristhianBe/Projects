@@ -1,0 +1,130 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: #e9eef4;
+  color: #1f2933;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page { max-width: 680px; margin: 0 auto; }
+
+.cv {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 42, 68, 0.12);
+}
+
+/* Encabezado */
+.cv-header {
+  background: linear-gradient(135deg, #0f2a44, #1e4d7b);
+  color: #fff;
+  padding: 36px 32px 28px;
+}
+
+h1 { margin: 0; font-size: 30px; font-weight: 700; }
+
+.role { margin: 4px 0 0; color: #f5b841; font-weight: 600; }
+
+address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 16px;
+  font-style: normal;
+  font-size: 14px;
+  color: #d6e2ee;
+}
+
+address a { color: #d6e2ee; }
+
+/* Cuerpo */
+.cv-body { padding: 8px 32px 32px; }
+
+section, footer { margin-top: 26px; }
+
+h2 {
+  margin: 0 0 12px;
+  padding-left: 10px;
+  border-left: 4px solid #0e7c86;
+  color: #0e7c86;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h3 { margin: 0; color: #0f2a44; font-size: 16px; font-weight: 700; }
+
+p { margin: 0; }
+
+/* Habilidades */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #e6f4f5;
+  color: #0b5f66;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Experiencia, educación y proyectos */
+.item {
+  position: relative;
+  margin-bottom: 18px;
+  padding-left: 18px;
+  border-left: 2px solid #d6e2ee;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f5b841;
+}
+
+.date { color: #6b7a89; font-size: 13px; margin: 2px 0 6px; }
+
+.item ul { margin: 6px 0; padding-left: 18px; font-size: 14px; }
+
+.skills { font-size: 13px; color: #52606d; }
+
+/* Enlaces */
+a { color: inherit; text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.links a {
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: #0f2a44;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.links a:hover { background: #0e7c86; text-decoration: none; }
+
+@media (max-width: 520px) {
+  .cv-header, .cv-body { padding-left: 20px; padding-right: 20px; }
+  h1 { font-size: 25px; }
+}
