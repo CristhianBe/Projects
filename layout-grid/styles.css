@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.caja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  border: 2px solid #333;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.a { grid-area: a; background: #e63946; }
+.b { grid-area: b; background: #2a9d8f; }
+.c { grid-area: c; background: #e9c46a; color: #333; }
+.d { grid-area: d; background: #457b9d; }
+
+/* ===== MOBILE (por defecto, mobile-first) ===== */
+.contenedor {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d";
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 600px) {
+  .contenedor {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "a a d"
+      "b c d";
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .contenedor {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "a b c"
+      "d d d";
+  }
+}

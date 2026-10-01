@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.caja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  border: 2px solid #333;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.a { background: #e63946; }
+.b { background: #2a9d8f; }
+.c { background: #e9c46a; color: #333; }
+.d { background: #457b9d; }
+
+/* ===== MOBILE (por defecto, mobile-first) ===== */
+/* Todo apilado en una sola columna: A, B, C, D */
+.contenedor,
+.grupo,
+.sub-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== TABLET ===== */
+/* Izquierda: A arriba, B y C abajo lado a lado. Derecha: D ocupa todo el alto */
+@media (min-width: 600px) {
+  .contenedor {
+    flex-direction: row;
+  }
+
+  .grupo {
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .sub-grupo {
+    flex-direction: row;
+  }
+
+  .sub-grupo .caja {
+    flex: 1;
+  }
+
+  .d {
+    flex: 1;
+  }
+}
+
+/* ===== DESKTOP ===== */
+/* Arriba: A, B, C en fila. Abajo: D a todo el ancho */
+@media (min-width: 1024px) {
+  .contenedor {
+    flex-direction: column;
+  }
+
+  .grupo {
+    flex-direction: row;
+  }
+
+  .a {
+    flex: 1;
+  }
+
+  .sub-grupo {
+    flex: 2; /* ocupa el espacio de B + C */
+  }
+}
