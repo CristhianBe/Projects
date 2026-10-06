@@ -1,0 +1,106 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+h1 { text-align: center; }
+h2 { margin-bottom: 0.5rem; }
+
+/* =========================================
+   LAYOUT 1 - Fixture SA (mobile-first)
+   ========================================= */
+.layout-1 {
+  border: 2px solid #607d8b;
+  background: white;
+}
+
+.layout-1 .barra {
+  background: #9e9e9e;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+}
+
+.layout-1 .grid {
+  display: grid;
+  gap: 4px;
+  padding: 4px;
+  min-height: 70vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas:
+    "b b"
+    "c d"
+    "e e";
+}
+
+.layout-1 .caja {
+  background: white;
+  border: 2px solid #607d8b;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.layout-1 .a { grid-area: a; display: none; } /* A no aparece en móvil */
+.layout-1 .b { grid-area: b; }
+.layout-1 .c { grid-area: c; }
+.layout-1 .d { grid-area: d; }
+.layout-1 .e { grid-area: e; }
+
+/* =========================================
+   LAYOUT 2 - header/nav/article/aside/footer
+   ========================================= */
+.layout-2 {
+  display: grid;
+  gap: 4px;
+  padding: 4px;
+  min-height: 70vh;
+  background: #ddd;
+  color: white;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto auto auto;
+  grid-template-areas:
+    "header"
+    "article"
+    "nav"
+    "aside"
+    "footer";
+}
+
+.layout-2 > * { padding: 1rem; }
+
+.layout-2 header  { grid-area: header;  background: #0040d0; }
+.layout-2 nav     { grid-area: nav;     background: #0091ea; }
+.layout-2 article { grid-area: article; background: #8c8c8c; min-height: 200px; }
+.layout-2 aside   { grid-area: aside;   background: #0091ea; }
+.layout-2 footer  { grid-area: footer;  background: #0040d0; }
+
+/* =========================================
+   DESKTOP
+   ========================================= */
+@media (width >= 768px) {
+  .layout-1 .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+      "a b b"
+      "c d e";
+  }
+
+  .layout-1 .a { display: grid; }
+
+  .layout-2 {
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header  header"
+      "nav    article aside"
+      "footer footer  footer";
+  }
+}
