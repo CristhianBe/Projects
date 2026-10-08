@@ -4,7 +4,7 @@ const letrero = document.querySelector(".letrero");
 const aviso = document.querySelector(".aviso");
 
 // Sonido de alerta (archivo dentro de la carpeta extintor)
-const sonido = new Audio("alerta.mp3");
+const sonido = new Audio("miedo.mp3");
 
 function iniciarAlarma() {
   sonido.currentTime = 0;   // reinicia el sonido cada vez que entra el mouse
